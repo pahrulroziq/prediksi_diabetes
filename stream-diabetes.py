@@ -10,9 +10,24 @@ diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
 # Load dataset globally
 diabetes_dataset = pd.read_csv('diabetes_data_upload.csv')
 
-# Sidebar - Main menu
+# Judul sidebar
 st.sidebar.title("Menu Utama")
-menu = st.sidebar.radio("Pilih Menu", ["Deskripsi", "Dataset", "Visualisasi", "Prediksi"])
+
+# Dropdown menu
+menu = st.sidebar.selectbox(
+    "Pilih Menu", 
+    ["Deskripsi", "Dataset", "Visualisasi", "Prediksi"]
+)
+
+# Tampilan menu berdasarkan pilihan
+if menu == "Deskripsi":
+    st.write("Ini adalah halaman Deskripsi.")
+elif menu == "Dataset":
+    st.write("Ini adalah halaman Dataset.")
+elif menu == "Visualisasi":
+    st.write("Ini adalah halaman Visualisasi.")
+elif menu == "Prediksi":
+    st.write("Ini adalah halaman Prediksi.")
 
 # Deskripsi
 if menu == "Deskripsi":
